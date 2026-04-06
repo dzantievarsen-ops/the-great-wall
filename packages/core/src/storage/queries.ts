@@ -14,7 +14,22 @@ export type NewSource = typeof sources.$inferInsert;
 
 export function insertSource(db: Db, source: Omit<NewSource, 'id'> & { id?: string }) {
   const id = source.id ?? nanoid();
-  return db.insert(sources).values({ ...source, id }).returning().get();
+  return db
+    .insert(sources)
+    .values({ ...source, id })
+    .onConflictDoUpdate({
+      target: sources.id,
+      set: {
+        name: sql`excluded.name`,
+        url: sql`excluded.url`,
+        handle: sql`excluded.handle`,
+        priority: sql`excluded.priority`,
+        category: sql`excluded.category`,
+        active: sql`excluded.active`,
+      },
+    })
+    .returning()
+    .get();
 }
 
 export function getSourceStats(db: Db) {

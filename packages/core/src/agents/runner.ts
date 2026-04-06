@@ -20,13 +20,9 @@ export function loadAgentsConfig(): AgentsConfig {
 /**
  * Run a CLI agent with the given prompt and return its stdout.
  *
- * Writes the prompt to a temp file and pipes it via `cat` to avoid
- * shell escaping issues with complex prompt text.
- *
- * @param agentId - Key in agents.yaml (e.g. "gemini", "claude")
- * @param prompt  - The full prompt text to send
- * @param config  - Parsed AgentsConfig
- * @returns       - The agent's stdout as a string
+ * Writes the prompt to a temp file to avoid shell escaping issues.
+ * - gemini: uses --prompt flag with the prompt as argument
+ * - claude/codex: pipes prompt via stdin
  */
 export async function runAgent(
   agentId: string,
@@ -48,7 +44,11 @@ export async function runAgent(
   try {
     writeFileSync(tempFile, prompt, 'utf-8');
 
-    const cmd = `cat "${tempFile}" | ${agentConfig.command} ${agentConfig.flags}`;
+    // gemini CLI: --prompt takes the prompt string as its argument (not piped via stdin)
+    // claude/codex: read prompt from stdin
+    const cmd = agentConfig.command === 'gemini'
+      ? `${agentConfig.command} --prompt "$(cat "${tempFile}")" --output-format text`
+      : `cat "${tempFile}" | ${agentConfig.command} ${agentConfig.flags}`;
 
     const stdout = execSync(cmd, {
       encoding: 'utf-8',
