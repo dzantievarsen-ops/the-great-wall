@@ -1,0 +1,30 @@
+# The Great Wall - Agent Configuration
+# Which CLI agent handles which task. Edit via UI at /settings
+
+agents:
+  gemini:
+    command: "gemini"
+    flags: "-p"
+    description: "Google Gemini CLI — fast content extraction and summarization"
+    color: "#4285F4"
+
+  claude:
+    command: "claude"
+    flags: "-p --output-format text"
+    description: "Claude Code CLI — deep analysis, scientific rigor"
+    color: "#D97706"
+
+  codex:
+    command: "codex"
+    flags: "--quiet"
+    description: "OpenAI Codex CLI — code-focused analysis"
+    color: "#10B981"
+
+# Which agent handles which task (reassign via UI /settings)
+task_assignments:
+  scraping: gemini
+  analysis: claude
+  digest: claude
+  comprehensive_report: claude
+  deduplication: gemini
+  emergency_detect: claude

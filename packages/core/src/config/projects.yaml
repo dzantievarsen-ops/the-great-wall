@@ -1,0 +1,92 @@
+# The Great Wall - Voyager Project Mappings
+# The Watchman uses this to score relevance per project
+
+projects:
+  FootballScout:
+    path: "02_Systems/L17/05_Apps/in_development/FootballScout"
+    description: "AI-powered football scouting platform"
+    keywords:
+      - football
+      - scouting
+      - sports analytics
+      - web scraping
+      - firecrawl
+      - report generation
+      - real-time data
+    stack:
+      - next.js
+      - supabase
+      - vercel
+      - ai-sdk
+      - anthropic
+      - stripe
+      - sentry
+
+  Pivot:
+    path: "02_Systems/L17/05_Apps/in_development/Pivot"
+    description: "AI companion app with RAG and semantic memory"
+    keywords:
+      - education
+      - AI companion
+      - content management
+      - subscription
+      - RAG
+      - semantic memory
+      - article embedding
+    stack:
+      - next.js
+      - supabase
+      - vercel
+      - ai-sdk
+      - stripe
+
+  Hermes:
+    path: "02_Systems/L17/05_Apps/in_development/Hermes"
+    description: "Marketing automation platform"
+    keywords:
+      - social media
+      - content scheduling
+      - linkedin
+      - twitter
+      - reddit
+      - marketing automation
+    stack:
+      - next.js
+      - supabase
+      - vercel
+      - ai-sdk
+
+  Skill20:
+    path: "02_Systems/L17/05_Apps/in_development/Skill20"
+    description: "Gamified skill acquisition platform"
+    keywords:
+      - learning
+      - skill acquisition
+      - gamification
+      - PWA
+      - quest system
+      - pedagogy
+    stack:
+      - react
+      - vite
+      - supabase
+      - vercel
+
+  VoyagerOS:
+    path: "."
+    description: "Voyager operating system itself"
+    keywords:
+      - claude code
+      - gemini cli
+      - obsidian
+      - n8n
+      - MCP
+      - agent orchestration
+      - knowledge management
+      - automation
+    stack:
+      - claude-code
+      - gemini-cli
+      - n8n
+      - obsidian
+      - mcp

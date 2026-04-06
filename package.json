@@ -1,0 +1,21 @@
+{
+  "name": "the-great-wall",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI Intelligence Perimeter — curates the AI landscape and feeds actionable intelligence into your projects",
+  "scripts": {
+    "gather": "pnpm --filter @great-wall/core run gather",
+    "gather:dry": "pnpm --filter @great-wall/core run gather:dry",
+    "report:digest": "pnpm --filter @great-wall/core run report:digest",
+    "report:full": "pnpm --filter @great-wall/core run report:full",
+    "dev": "pnpm --filter @great-wall/ui run dev",
+    "build": "pnpm --filter @great-wall/core run build && pnpm --filter @great-wall/ui run build",
+    "setup": "bash scripts/setup.sh",
+    "schedule:install": "bash scripts/install-schedule.sh",
+    "schedule:uninstall": "bash scripts/uninstall-schedule.sh"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

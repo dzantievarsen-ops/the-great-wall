@@ -1,0 +1,31 @@
+{
+  "name": "@great-wall/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts",
+    "gather": "tsx src/scheduler/runner.ts",
+    "gather:dry": "tsx src/scheduler/runner.ts --dry-run",
+    "report:digest": "tsx src/scheduler/runner.ts --report-only digest",
+    "report:full": "tsx src/scheduler/runner.ts --report-only comprehensive"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "better-sqlite3": "^11.7.0",
+    "drizzle-orm": "^0.38.0",
+    "fast-xml-parser": "^4.5.0",
+    "resend": "^4.1.0",
+    "yaml": "^2.7.0",
+    "nanoid": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.0",
+    "@types/node": "^22.0.0",
+    "drizzle-kit": "^0.30.0",
+    "tsup": "^8.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}

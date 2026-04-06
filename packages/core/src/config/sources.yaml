@@ -1,0 +1,138 @@
+# The Great Wall - Source Configuration
+# Edit via UI at /sources or modify this file directly
+
+sources:
+  youtube:
+    # AI Labs (official channels)
+    - handle: "@AnthropicAI"
+      name: "Anthropic"
+      priority: critical
+      category: labs
+      active: true
+
+    - handle: "@OpenAI"
+      name: "OpenAI"
+      priority: critical
+      category: labs
+      active: true
+
+    - handle: "@GoogleDeepMind"
+      name: "Google DeepMind"
+      priority: critical
+      category: labs
+      active: true
+
+    - handle: "@Meta"
+      name: "Meta AI"
+      priority: high
+      category: labs
+      active: true
+
+    # AI Practitioners & Builders
+    - handle: "@ColeMedin"
+      name: "Cole Medin"
+      priority: high
+      category: practitioners
+      active: true
+
+    - handle: "@NateHerk"
+      name: "Nate Herk"
+      priority: high
+      category: practitioners
+      active: true
+
+    - handle: "@maboroshi_ai"
+      name: "maboroshi AI"
+      priority: high
+      category: practitioners
+      active: true
+
+    - handle: "@DavidOndrej"
+      name: "David Ondrej"
+      priority: medium
+      category: practitioners
+      active: true
+
+    - handle: "@maboroshiAI"
+      name: "Matthew Berman"
+      priority: medium
+      category: commentary
+      active: true
+
+    # AI Research & Commentary
+    - handle: "@TwoMinutePapers"
+      name: "Two Minute Papers"
+      priority: high
+      category: research
+      active: true
+
+    - handle: "@YannicKilcher"
+      name: "Yannic Kilcher"
+      priority: high
+      category: research
+      active: true
+
+    - handle: "@bycloud"
+      name: "bycloud"
+      priority: medium
+      category: research
+      active: true
+
+  substack:
+    - url: "https://simonwillison.substack.com/feed"
+      name: "Simon Willison"
+      priority: critical
+      category: engineering
+      active: true
+
+    - url: "https://thealgorithmicbridge.substack.com/feed"
+      name: "The Algorithmic Bridge"
+      priority: high
+      category: analysis
+      active: true
+
+    - url: "https://www.oneusefulthing.org/feed"
+      name: "One Useful Thing (Ethan Mollick)"
+      priority: critical
+      category: applications
+      active: true
+
+    - url: "https://www.interconnects.ai/feed"
+      name: "Interconnects (Nathan Lambert)"
+      priority: high
+      category: research
+      active: true
+
+  web:
+    - url: "https://www.aisnakeoil.com/"
+      name: "AI Snake Oil"
+      rss: "https://www.aisnakeoil.com/feed"
+      priority: high
+      category: critical_analysis
+      active: true
+
+    - url: "https://lilianweng.github.io/"
+      name: "Lilian Weng"
+      rss: "https://lilianweng.github.io/index.xml"
+      priority: critical
+      category: research
+      active: true
+
+    - url: "https://www.deeplearning.ai/the-batch/"
+      name: "The Batch (Andrew Ng)"
+      rss: null
+      priority: high
+      category: digest
+      active: true
+
+    - url: "https://huggingface.co/blog"
+      name: "Hugging Face Blog"
+      rss: "https://huggingface.co/blog/feed.xml"
+      priority: high
+      category: open_source
+      active: true
+
+metadata:
+  version: "1.0"
+  last_updated: null
+  total_sources: 20
